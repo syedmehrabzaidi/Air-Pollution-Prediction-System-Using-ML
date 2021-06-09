@@ -1,0 +1,179 @@
+{% extends 'base.html' %}
+{% block title %}Servies |{% endblock title %}
+{% block head %}   <style>
+/*common setup code*/
+.sectionHeader {
+	font-family: gotham_mediumregular, sans-serif;
+	font-size: 14px;
+	text-align: center;
+	color: #4a6b93;
+	margin-bottom: 30px;
+}
+
+.sectionHeader .header {
+	font-size: 26px;
+}
+
+span.header {
+	font-family: civita_mediumregular, serif;
+	font-size: 24px;
+	background-color: #FFF;
+	position: relative;
+	z-index: 50;
+	padding: 0 9px 0 9px;
+}
+
+.header img {
+	opacity: .45;
+}
+
+/*version 1*/
+
+hr.rule1 {
+	background-color: #FFF;
+	position: absolute;
+	z-index: 1;
+	margin-top: -19px;
+}
+
+.rule1.experience {
+	left: 26%;
+	right: 26%;
+  min-width: 250px;
+  border-top: 2px solid red;
+}
+
+
+/*version 2*/
+
+
+
+.header.ver2 {
+    font-size: 30px;
+  
+}
+
+
+.header.ver2::before {
+  content: " ";
+  display:block;
+  position:absolute;
+  width:30em;
+  left:50%;
+  top:50%;
+  -webkit-transform: translateX(-50%);
+  z-index: -1;
+  margin-top:0;
+  border-top: 1px solid green;
+}
+
+
+
+
+  
+
+</style>    
+
+  
+<style>
+ body { margin-top:20px; }
+.panel-title {display: inline;font-weight: bold;}
+.checkbox.pull-right { margin: 0; }
+.pl-ziro { padding-left: 0px; }
+
+</style>  
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  {% endblock head %}
+
+
+
+{% block body %}
+
+<div class="sectionHeader">
+			<span class="header">
+				<img alt="" src="/images/MiscImage/US-English/15-ONL-95-flourish-before=1.png" />
+                <em></em>
+				<img alt="" src="/images/MiscImage/US-English/15-ONL-95-flourish-after=1.png" />
+			</span>
+			<hr class="rule1 experience" />
+			
+		</div>
+
+
+<div class="sectionHeader">
+			<span class="header ver2">
+<em>MemberShip</em>
+
+			</span>
+			
+		</div>
+
+
+
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Payment Details
+                    </h3>
+                    <div class="checkbox pull-right">
+                        <label>
+                            <input type="checkbox" />
+                            Remember
+                        </label>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <form role="form">
+                    <div class="form-group">
+                        <label for="cardNumber">
+                            CARD NUMBER</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="cardNumber" placeholder="Valid Card Number"
+                                required autofocus />
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-7 col-md-7">
+                            <div class="form-group">
+                                <label for="expityMonth">
+                                    EXPIRY DATE</label>
+                                <div class="col-xs-6 col-lg-6 pl-ziro">
+                                    <input type="text" class="form-control" id="expityMonth" placeholder="MM" required />
+                                </div>
+                                <div class="col-xs-6 col-lg-6 pl-ziro">
+                                    <input type="text" class="form-control" id="expityYear" placeholder="YY" required /></div>
+                            </div>
+                        </div>
+                        <div class="col-xs-5 col-md-5 pull-right">
+                            <div class="form-group">
+                                <label for="cvCode">
+                                    CV CODE</label>
+                                <input type="password" class="form-control" id="cvCode" placeholder="CV" required />
+                            </div>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <ul class="nav nav-pills nav-stacked">
+                <li class="active"><a href="#"><span class="badge pull-right"><span class="glyphicon glyphicon-usd"></span>150</span> Final Payment</a>
+                </li>
+            </ul>
+            <br/>
+            <a href="hom" class="btn btn-success btn-lg btn-block" role="button">Pay</a>
+        </div>
+    </div>
+</div>
+
+ {% endblock body %}
+

@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block title %}Home |{% endblock title %}
+{% block head %}   <style>
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+</style>    {% endblock head %}
+<html><head><style>
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  border: 3px solid green;
+}
+</style></head></html>
+
+{% block body %}
+
+<div class="container my-4"  >
+
+  <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="800">
+      <img src="static\img\p1.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item" data-bs-interval="1000">
+      <img src="static\img\veeterzy-UwBrS-qRMHo-unsplash.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="static\img\p4.jpg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"  data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"  data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<br><br>
+
+<div class="center"><button type="button" class="btn btn-info">More</button> </div>
+
+<div><p>The proposed system depicts various strategies utilized for forecast of Air Quality Index (AQI) utilizing supervised machine learning procedures. The system examines machine learning algorithm for air quality index by computing algorithm accuracy which will bring about the best precision. Moreover, the system exhibits different machine learning accuracy figures from the given dataset with assessment order report which recognizes the perplexity lattice. The outcome shows the adequacy of machine learning suggested calculation method that can be contrasted and best exactness with accuracy, Recall and F1 Score.</p>
+</div>
+
+ <div><img src="static\img2\16.png" class="d-block w-100" alt="IMAGE">
+</div>
+ <div><img src="static\img2\17.png" class="d-block w-100" alt="IMAGE">
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+{% endblock body %}
+

@@ -1,0 +1,247 @@
+{% extends 'base.html' %}
+
+{% block title %}PREDICTION{% endblock title %}
+
+{% block body %}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{
+  font-family: Calibri, Helvetica, sans-serif;
+  background-color: brown;
+}
+.container {
+    padding: 100px;
+  background-color: lightblue;
+}
+
+input[type=text], input[type=password], textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+input[type=text]:focus, input[type=password]:focus {
+  background-color: orange;
+  outline: none;
+}
+ div {
+            padding: 10px 0;
+         }
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+.registerbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+.registerbtn:hover {
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+<form method="post" action="/prediction">
+{% csrf_token %}
+  <div class="container">
+  <center>  <h1> Air Pollution Prediction System</h1> </center>
+  <hr>
+  <label> Firstname </label> 
+<input type="text" name="firstname" placeholder= "Firstname" size="15" required /> 
+
+<label> Lastname: </label>  
+<input type="text" name="lastname" placeholder="Lastname" size="15"required /> 
+<div >
+
+<label> State :</label> 
+<select name="State" id="State" >
+
+<option value=1 id="1">sindh</option>
+<option value=2 id="2">Punjab</option>
+<option value=3 id="3">Balochistan</option>
+<option value=4 id="4">Khyber Pakhtunkhwa</option>
+<option value=5 id="4">Baltistan</option>
+
+</select>
+</div>
+
+
+<div>
+<label> 
+City :
+</label> 
+
+      
+<select name="city">
+
+<option value="1">Badin</option>
+<option value="Dadu">Dadu</option>
+<option value="Guddu Barrage">Guddu Barrage</option>
+<option value="Khairpur Mirs">Khairpur Mirs</option>
+<option value="Mardan">Mardan</option>
+<option value="Karachi">Karachi</option>
+<option value="Ahmedabad">Ahmedabad</option>
+<option value="Jamshoro">Jamshoro</option>
+<option value="Manesar">Manesar</option>
+<option value="Keti Bandar">Keti Bandar</option>
+<option value="Rohtak">Rohtak</option>
+<option value="Jorapokhar">Jorapokhar</option>
+<option value="Khairpur">Khairpur</option>
+<option value="Quetta">Quetta</option>
+<option value="Turbat">Turbat</option>
+<option value="Gwadar">Gwadar</option>
+<option value="Dera Allah Yar">Dera Allah Yar</option>
+<option value="Surab">Surab</option>
+<option value="Dureji">Dureji</option>
+<option value="Barkhan">Barkhan</option>
+<option value="Shahrug">Shahrug</option>
+<option value="Duki">Duki</option>
+<option value="Bela">Bela</option>
+<option value="Lahore">Lahore</option>
+<option value="Faisalabad">Faisalabad</option>
+<option value="Rawalpindi">Rawalpindi</option>
+<option value="Gujranwala">Gujranwala</option>
+<option value="Multan">Multan</option>
+<option value="Bahawalpur">Bahawalpur</option>
+<option value="Sargodha">Sargodha</option>
+<option value="Sialkot">Sialkot</option>
+<option value="Sheikhupura">Sheikhupura</option>
+<option value="Rahim Yar Khan">Rahim Yar Khan</option>
+<option value="Jhang">Jhang</option>
+<option value="Dera Ghazi Khan">Dera Ghazi Khan</option>
+<option value="Gujrat">Gujrat</option>
+<option value="Sahiwal">Sahiwal</option>
+<option value="Wah Cantonment">Wah Cantonment</option>
+<option value="Rupnagar">Rupnagar</option>
+<option value="Kasur">Kasur</option>
+<option value="Okara">Okara</option>
+<option value="Chiniot">Chiniot</option>
+<option value="Hafizabad">Hafizabad</option>
+<option value="Jodhpur">Jodhpur</option>
+<option value="Kota">Kota</option>
+<option value="Pali">Pali</option>
+<option value="Sadiqabad">Sadiqabad</option>
+<option value="Peshawar">Peshawar</option>
+<option value="Dera Ismail Khan">Dera Ismail Khan</option>
+<option value="Abbottabad">Abbottabad</option>
+<option value="Mansehra">Mansehra</option>
+<option value="Ghaziabad">Ghaziabad</option>
+<option value="Haripur">Haripur</option>
+<option value="Kanpur">Kanpur</option>
+<option value="Topi">Topi</option>
+<option value="Bannu">Bannu</option>
+<option value="Hangu">Hangu</option>
+<option value="Noida">Noida</option>
+<option value="Varanasi">Varanasi</option>
+<option value="Gilgit">Gilgit</option>
+<option value="Khaplu">Khaplu</option>
+<option value="Skardu">Skardu</option>
+<option value="Eidghah">Eidghah</option>
+<option value="Aliabad">Aliabad</option>
+<option value="Chilas">Chilas</option>
+</select>
+</div>
+
+<label> Avg</label>
+<input type="text" name="Avg" placeholder="Avg"  /> 
+
+<label> Max</label>
+<input type="text" name="Max" placeholder="Max"  value="" min="0" max="350" /> 
+
+<label> Min</label>
+<input type="text" name="Min" placeholder="Min"  value="" min="0" max="250" /> 
+
+<p>Select Pollutant:</p>
+   <input type="radio" id="Pollutants" name="Pollutants" value="0">
+  <label for="1">0. CO</label><br>
+
+  <input type="radio" id="Pollutants" name="Pollutants" value="1">
+  <label for="1">1. NH3</label><br>
+  
+  <input type="radio" id="Pollutants" name="Pollutants" value="2">
+  <label for="2">2. NO2</label><br>
+  
+  <input type="radio" id="Pollutants" name="Pollutants" value="3">
+  <label for="3">3. OZONE</label><br>
+  
+  <input type="radio" id="Pollutants" name="Pollutants" value="4">
+  <label for="4">4. PM10</label><br>
+  
+  <input type="radio" id="Pollutants" name="Pollutants" value="5">
+  <label for="5">5. PM2.5 </label><br>
+
+  <input type="radio" id="Pollutants" name="Pollutants" value="6">
+  <label for="6">6. SO2 </label>
+
+ 
+
+<div>
+<label> 
+AQI :
+</label> 
+
+<select name="aqi">
+
+<option value="Above_70">Above_70</option>
+<option value="Above_80">Above_80</option>
+<option value="Above_70">Above_90</option>
+<option value="Below_10">Below_10</option>
+<option value="Above_40">Above_40</option>
+<option value="Above_40">Above_40</option>
+<option value="Above_20">Above_20</option>
+<option value="Above_30">Above_30</option>
+<option value="Above_100">Above_100</option>
+
+
+</select>
+</div>
+<button type="submit" name="b1" class="registerbtn">Check :Prediction of Pollution</button>
+
+<label> 
+AQI
+</label>
+<input type="text" name="aqi1" placeholder="AQI"  value="{{dt.sus}}" /> 
+<input type="text" name="Try" placeholder="Try"  value="{{dt.5}}" /> 
+
+CAUSE :  
+<textarea cols="80" rows="5" placeholder="" name="cause" value="" required>  
+
+{% if radio.for == 1 %}
+    {{dt.5}}
+{% else %}
+    {{dt.random}}
+{% endif %}
+</textarea>
+
+SOURCE OF POLLUTANTS :  
+<textarea cols="80" rows="5" placeholder="source" name="source" value="source" required>  
+
+Combustion, Fireplaces, Car engines and Coal or Natural gas fired power plants.':0,
+ 'Burning of fuels, Wood stoves, Fires, Wind generated dust, Brick works, Refineries, Cement Works, Iron and Steel making.':1,
+ 'Internal combustion engines burning fossil fuels, Cigarette smoke, Butane, Kerosene heaters
+</textarea>  
+
+</form>  
+</body>  
+</html>  
+
+
+
+
+
+
+{% endblock body %}
